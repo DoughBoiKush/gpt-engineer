@@ -87,7 +87,7 @@ class AI:
 
     def __init__(
         self,
-        model_name="gpt-4-turbo",
+        model_name="gpt-3.5-turbo",
         temperature=0.1,
         azure_endpoint=None,
         streaming=True,
@@ -99,7 +99,7 @@ class AI:
         Parameters
         ----------
         model_name : str, optional
-            The name of the model to use, by default "gpt-4".
+            The name of the model to use, by default "gpt-3.5-turbo".
         temperature : float, optional
             The temperature to use for the model, by default 0.1.
         """
@@ -109,7 +109,7 @@ class AI:
         self.streaming = streaming
         self.vision = (
             ("vision-preview" in model_name)
-            or ("gpt-4-turbo" in model_name and "preview" not in model_name)
+            or ("gpt-3.5-turbo" in model_name and "preview" not in model_name)
             or ("claude" in model_name)
         )
         self.llm = self._create_chat_model()
